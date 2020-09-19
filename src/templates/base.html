@@ -1,0 +1,116 @@
+{% load static %}
+
+{% comment %} added for use in IF STATEMENTS {% endcomment %}
+{% url 'home' as home_url %}
+{% url 'conditions' as conditions_url %}
+{% url 'services' as services_url %}
+{% url 'about' as about_url %}
+{% url 'FAQ' as FAQ_url %}
+{% url 'contact' as contact_url %}
+{% comment %} added for use in IF STATEMENTS {% endcomment %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'custom.css' %}">
+    <link rel="stylesheet" href="{% static 'header.css' %}">
+    <link rel="stylesheet" href="{% static 'footer.css' %}">
+
+    <title>FullCircleAcupuncture | {% block head_title %}{% endblock %}</title>
+</head>
+<header>
+    <div class="header-banner">
+        We now offer Virtual Consultations and in-clinic Acupuncture
+    </div>
+
+    <div class="nav-wrapper">
+        <div class="nav-contact-row">
+            <div class="nav-contact">
+                <li><a href="mailto: y-anna@hotmail.com"><img src="{% static 'images/mail.svg' %}"></a></li>
+                <li><a href="{% url 'contact' %}"><img src="{% static 'images/phone.svg' %}"></a></li>
+                <li><a href="{% url 'contact' %}"><img src="{% static 'images/location-marker.svg' %}"></a></li>
+            </div>
+            <button class="nav-contact-button" onclick="document.location='{% url 'book_appointment' %}'">
+                BOOK APPOINTMENT
+            </button> 
+        </div>
+        <div class="nav-branding">
+            <a href="/"><h1>Full Circle</h1><h2>ACUPUNCTURE</h2></a>
+        </div>
+    </div>
+    <div class="container-link-wrapper-flex">
+        <div class="container-link-wrapper">
+            <div class="nav-link-wrapper {% if request.path == home_url %} active-nav-link {% endif %}">
+                <a class="nav-link" href="{% url 'home' %}">Home</a>
+            </div>
+            <div class="nav-link-wrapper {% if request.path == conditions_url %} active-nav-link {% endif %}">
+                <a class="nav-link" href="{{ conditions_url }}">Conditions</a>
+            </div>
+            <div class="nav-link-wrapper {% if request.path == services_url %} active-nav-link {% endif %}">
+                <a class="nav-link" href="{{ services_url }}">Services</a>
+            </div>
+            <div class="nav-link-wrapper {% if request.path == about_url %} active-nav-link {% endif %}">
+                <a class="nav-link" href="{{ about_url }}">About</a>
+            </div>
+            <div class="nav-link-wrapper {% if request.path == FAQ_url %} active-nav-link {% endif %}">
+                <a class="nav-link" href="{{ FAQ_url }}">FAQ</a>
+            </div>
+            <div class="nav-link-wrapper {% if request.path == contact_url %} active-nav-link {% endif %}">
+                <a class="nav-link" href="{{ contact_url }}">Contact</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<body>
+    <div class="container-title">
+        {{ title }}
+    </div> 
+
+    {% block content %}
+    {% endblock %}
+
+
+</body>
+
+<footer>
+
+<div class="footer-brand">
+    <a href="/"><h1>Full Circle</h1><h2>ACUPUNCTURE</h2></a>
+</div>
+<div class="footer-block-wrapper-flex">
+    <div class="footer-link-wrapper">
+        <div class="footer-link-wrapper {% if request.path == conditions_url %} active-nav-link {% endif %}">
+            <a class="footer-link" href="{{ conditions_url }}">Conditions</a>
+        </div>
+        <div class="footer-link-wrapper {% if request.path == services_url %} active-nav-link {% endif %}">
+            <a class="footer-link" href="{{ services_url }}">Services</a>
+        </div>
+        <div class="footer-link-wrapper {% if request.path == about_url %} active-nav-link {% endif %}">
+            <a class="footer-link" href="{{ about_url }}">About</a>
+        </div>
+        <div class="footer-link-wrapper {% if request.path == FAQ_url %} active-nav-link {% endif %}">
+            <a class="footer-link" href="{{ FAQ_url }}">FAQ</a>
+        </div>
+    </div>
+    <div class="footer-contacts">
+        <h3>Contacts</h3>
+        <p>(647) 123-4695</p>
+        <p>y-anna@hotmail.com</p>
+    </div>
+    <div class="footer-keep-in-touch">
+        <h3>Keep in touch</h3>
+        <img src="{% static 'images/instagram.png' %}" alt="">
+        <p>@y-anna</p>
+    </div>
+</div>
+<div class="footer-copy">
+    © Full Circle Acupuncture | All rights reserved.
+</div>
+</footer>
+
+</html>
+
+<script src="{% static 'slideshow.js' %}"></script>

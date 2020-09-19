@@ -1,0 +1,59 @@
+##########################
+#   Most used commands   #
+##########################
+
+python manage.py runserver
+
+python manage.py makemigrations
+
+python manage.py migrate
+
+python manage.py createsuperuser
+
+
+##############
+#   Set-up   #
+##############
+
+mkdir fullcircleacupuncture.ca
+// pipenv --python 3.6 install django==2.2
+pipenv install django==2.2
+pipenv shell
+mkdir src
+cd src
+
+django-admin startproject fullcircleacupuncture .
+
+python manage.py createsuperuser
+
+python manage.py runserver
+
+* create file: 
+    src/fullcircleacupuncture/views.py 
+
+
+* create url: 
+    from .views import home_page
+    path('', home_page)
+
+* create folder and files
+    src/templates
+    src/templates/base.html , about.html, conditions.html ...etc
+
+* added 'DIRS' to tempaltes in settings.py
+
+        TEMPLATES = [
+            {
+                'BACKEND': 'django.template.backends.django.DjangoTemplates',
+                'DIRS': [os.path.join(BASE_DIR, 'templates')],
+
+
+django-admin startapp blog
+
+* add app to settings.py
+
+
+
+
+
+

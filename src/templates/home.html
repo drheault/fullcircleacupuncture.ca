@@ -1,0 +1,228 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head_title %}Home Page{% endblock %}
+
+{% block content %}
+
+
+{% comment %} <div id="django_recent_media_wall">
+    {% instagram_user_recent_media instagram_profile_name %}
+    {% for media in recent_media %}
+        <div class="django_instagram_media_wall_item">
+            <a href="//instagram.com/p/{{ media.shortcode }}" target="_blank">
+                <img src="{{ media.thumbnail_src }}"/>
+                <span>{{ media.edge_media_to_caption.edges.0.node.text }}</span>
+            </a>
+        </div>
+    {% endfor %}
+</div> {% endcomment %}
+
+
+
+<div class="slideshow-container">
+    <div class="slideshow-inner">
+        <div class="mySlides fade">
+            <img  src='{% static 'images/slide/1.png' %}' style='width: 100%;' alt="s"/>
+            {% comment %} <div class="text">Test</div> {% endcomment %}
+        </div>
+        <div class="mySlides fade">
+            <img  src='{% static 'images/slide/2.png' %}' style='width: 100%;' alt=""/>
+        </div>
+        <div class="mySlides fade">
+            <img  src='{% static 'images/slide/3.png' %}' style='width: 100%;' alt=""/>
+        </div>
+        <div class="mySlides fade">
+            <img  src='{% static 'images/slide/2.png' %}' style='width: 100%;' alt=""/>
+        </div>
+    </div>
+
+    <a class="prev" onclick='plusSlides(-1)'>&#10094;</a>
+    <a class="next" onclick='plusSlides(1)'>&#10095;</a>
+</div>
+<div style='text-align: center;'>
+    <span class="dot" onclick='currentSlide(1)'></span>
+    <span class="dot" onclick='currentSlide(2)'></span>
+    <span class="dot" onclick='currentSlide(3)'></span>
+    <span class="dot" onclick='currentSlide(4)'></span>
+</div>
+
+<div class="container-center">
+<div class="container-quote">
+    <div class="quote-text">
+        <p>Full Circle Acupuncture provides natural care with complementary 
+        medicine to help you get healthy, and stay healthy.</p>
+    </div>
+    <div class="quote-author">
+        <p>- based in Toronto and Richmond Hill</p>
+    </div>
+    <div class="quote-bottom-border"></div>
+</div>
+</div>
+ 
+<div class="heading-centered">
+    <h3 style="text-align: center">Customized Natural Solutions For:</h3>
+</div>
+
+
+<div class="container-full-page-bright">
+    <div class="round-image">
+        <img src="{% static 'images/round1.png' %}" alt="">
+    </div>
+    <div class="container-full-page-text">
+        <h3>FERTILITY SUPPORT</h3>
+        <p>“Fertility journey is overwhelming” is a understatement.</p>
+        <p>Whether you’re trying naturally, preparing for IVF/IUI cycle,
+        or looking for pregnancy care, you’re in the right place.</p>
+        <div class="button-learn-more">
+            <button onclick="document.location='{% url 'services' %}'">Learn More</button>
+        </div>
+    </div>
+</div>
+
+
+<div class="container-full-page-dark">
+        <div class="container-full-page-text">
+            <h3>GENERAL HEALTH</h3>
+            <p>I love seeing patients who is ready to take ownership in their wellness journey.</p>
+            <p>Do you need help with women’s health,  anxiety, insomnia, digestive issues or pain? I’ve got your back.</p>
+            <div class="button-learn-more">
+                <button onclick="document.location='{% url 'services' %}'">Learn More</button>
+            </div>
+        </div>
+    <div class="round-image">
+        <img src="{% static 'images/round2.png' %}" alt="">
+    </div>
+</div>
+
+
+<div class="container-homepage-services-title">
+    <h3 style="text-align: center">Services</h3>
+</div>
+
+<div class="container-services">
+    <div class="container-services-left">
+        <div class="round-image-sm">
+            <img src="{% static 'images/round-sm-1.png' %}" alt="">
+        </div>
+        <div class="container-services-title">
+            ACUPUNCTURE
+        </div>
+        <div class="container-services-cols">
+            <div class="container-services-col1">
+                <a href={% url 'services' %}>Fertility</a> 
+            </div>
+            <div class="container-services-col2">
+                <a href={% url 'services' %}>Clinical</a>
+            </div>
+        </div>
+    </div>
+    <div class="dummy-border-container"></div>
+    <div class="container-services-right">
+        <div class="round-image-sm">
+            <img src="{% static 'images/round-sm-2.png' %}" alt="">
+        </div>
+        <div class="container-services-title">
+            MASSAGE THERAPY
+        </div>
+        <div class="container-services-cols">
+            <div class="container-services-col1">
+                <a href={% url 'services' %}>Fertility</a>
+            </div>
+            <div class="container-services-col2">
+                <a href={% url 'services' %}>Therapeutic</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-welcome">
+    <div class="container-welcome-heading">
+        <h3>Welcome, I'm Anna</h3>
+        <h4>R.Ac, RMT</h4>
+        <div class="dummy-bottom-border">
+        </div>
+    </div>
+    
+    <div class="container-welcome-body">
+    
+        <p> 
+            <img src="{% static 'images/anna-med.png' %}" class="welcome-image-anna">
+            <strong>My real name is Yuan, but you can call me Anna!</strong>
+            I’m a registered acupuncturist and massage therapist.
+            <br>
+            <br>I love joining the dots for my patients that what they feel physically and emotionally has a valid reason, instead of what may seem random symptoms. I love showing them their body is connected and we can dig to the root of problems together.
+            <br>
+            <br>Our wellbeing directly impacts every aspect of our lives - how we feel day to day, how we show up in our family + relationships, and our career path. It’s the expression of our potential this lifetime.
+            <br>
+            <br>My goal is to provide my patients with knowledge and tools in their unique wellness journey to help them restore balance in health and regain a sense of control in life, so they could feel their best and do what they love.
+            <br><br>
+            <div class="button-learn-more">
+                <button onclick="document.location='{% url 'about' %}'">Learn More</button>
+            </div>
+        </p>
+    </div>
+    
+</div>
+
+<div class="get-started">
+    <h3>We Offer a Discovery Call to New Patients</h3>
+    <div class="button-learn-more">
+        <button onclick="document.location='{% url 'book_appointment' %}'">Get Started</button>
+    </div>
+</div>
+
+<div class="how-does-acu-work">
+    <h2>How Does Acupuncture Work?</h2>
+    <h4>Acupuncture works by gently stimulating the body to heal itself ✨</h4>
+    <p>It is a minimal invasive method to regulate the central nervous system (CNS), 
+    switching you from “Fight or Flight” to “Rest and Digest” state, where it allows the healing to occur.️</p>
+    <br>
+    <p>Acupuncture needles are placed in nerve-rich areas of the skin surface
+    in order to influence tissues, gland, organs, and various functions of the body. 
+    </p>
+    <br>
+    <p>According to TCM (traditional Chinese medicine) theory, 
+    imbalance of health happens when there’s either too much of something, 
+    too little of something or there’s blockage that impedes the normal body functions.💡
+    Often, it could be any combination or even all of the above.</p>
+    <br>
+    <p>My job is to look at you as a whole (your physical health, your mind and soul) and get to the root of the cause. 
+    I gently guide the body to rid of the excess, fill the void and eliminate the stagnation. 
+    Voila✨ - then my friend, we are steps closer to achieve the optimal health.</p>
+    <br>
+    <p>This is why I love acupuncture as a tool to address many issues, particularly women’s health and fertility.</p>
+
+    <p>If you have any questions, I am happy to answer them! </p>
+    <br>
+    <a href={% url 'contact' %}>Contact me</a>
+</div>
+
+
+{% load instagram_client %}
+
+
+{% comment %} {% instagram_recent_media_wall username="__annagao" %}
+
+{% for media in recent_media %}
+
+<img src="{{ media.thumbnail_src|thumbnail }}"/>
+
+{% endfor %} {% endcomment %}
+
+
+<div id="django_recent_media_wall">
+    {% instagram_user_recent_media instagram_profile_name %}
+    {% for media in recent_media|slice:":3" %}
+        <div class="django_instagram_media_wall_item">
+            <a href="//instagram.com/p/{{ media.shortcode }}" target="_blank">
+                <img src="{{ media.thumbnail_src }}"/>
+                <span class="insta-text">{{ media.edge_media_to_caption.edges.0.node.text }}</span>
+            </a>
+        </div>
+    {% endfor %}
+</div>
+
+.
+
+{% endblock %}
